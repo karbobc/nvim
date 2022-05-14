@@ -57,7 +57,6 @@ local function extra(name, table)
 end
 
 local function main()
-    -- plug("begin")
     vim.call("plug#begin")
     for k, v in pairs(plugins) do
         if (type(k) == "number") then
@@ -66,7 +65,6 @@ local function main()
             extra(k, v)
         end
     end
-    -- plug("end")
     vim.call("plug#end")
 end
 
