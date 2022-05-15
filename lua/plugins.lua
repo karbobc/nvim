@@ -1,26 +1,27 @@
+return {
 
--- use vim-plug to manage the plugins
-local plugins = {
-    -- vim-airline
-    "vim-airline/vim-airline",
+    -- nvim-web-devicons
+    "kyazdani42/nvim-web-devicons",
 
-    -- vim-airline-themes
-    "vim-airline/vim-airline-themes",
+    -- lualine.nvim
+    "nvim-lualine/lualine.nvim",
+   
+    -- bufferline.nvim
+    ["akinsho/bufferline.nvim"] = {
+        tag = "v2.*",
+    },
 
-    -- auto-pairs
-    "jiangmiao/auto-pairs",
+    -- vscode.nvim
+    "Mofiqul/vscode.nvim",
 
-    -- vim-color-solarized
-    "altercation/vim-colors-solarized",
+    -- nvim-autopairs
+    "windwp/nvim-autopairs",
 
     -- vim-fugitive
     "tpope/vim-fugitive",
 
-    -- syntastic
-    "scrooloose/syntastic",
-
-    -- vim-auto-save
-    "907th/vim-auto-save",
+    -- AutoSave.nvim
+    "Pocco81/AutoSave.nvim",
 
     -- vim-easy-align
     "junegunn/vim-easy-align", 
@@ -28,8 +29,8 @@ local plugins = {
     -- vim-surround
     "tpope/vim-surround",
 
-    -- vim-commentary
-    "tpope/vim-commentary",
+    -- Comment.nvim
+    "numToStr/Comment.nvim",
 
     -- fzf.vim
     "~/.fzf",
@@ -41,31 +42,9 @@ local plugins = {
     },
 
     -- coc.nvim
-    ["neoclide/coc.nvim"] = {
-        branch = "release",
-    },
+    -- ["neoclide/coc.nvim"] = {
+    --     branch = "release",
+    -- },
 
 }
 
--- vim-plug
-local plug = vim.fn["plug#"]
-
-local function extra(name, table)
-    for k, v in pairs(table) do
-        plug(name, { k = v })
-    end
-end
-
-local function main()
-    vim.call("plug#begin")
-    for k, v in pairs(plugins) do
-        if (type(k) == "number") then
-            plug(v)
-        else
-            extra(k, v)
-        end
-    end
-    vim.call("plug#end")
-end
-
-main()

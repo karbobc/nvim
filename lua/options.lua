@@ -1,0 +1,16 @@
+return {
+    fileencoding   = "utf-8",
+    termencoding   = "utf-8",
+    encoding       = "utf-8",
+    tabstop        = 4,
+    shiftwidth     = 4,
+    expandtab      = true,
+    smarttab       = true,
+    incsearch      = true,
+    autoindent     = true,
+    smartindent    = true,
+    number         = true,
+    relativenumber = true,
+    cursorline     = true,
+    termguicolors  = true,
+}
