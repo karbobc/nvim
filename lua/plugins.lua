@@ -5,7 +5,7 @@ return {
 
     -- lualine.nvim
     "nvim-lualine/lualine.nvim",
-   
+
     -- bufferline.nvim
     ["akinsho/bufferline.nvim"] = {
         tag = "v2.*",
@@ -24,7 +24,7 @@ return {
     "Pocco81/AutoSave.nvim",
 
     -- vim-easy-align
-    "junegunn/vim-easy-align", 
+    "junegunn/vim-easy-align",
 
     -- vim-surround
     "tpope/vim-surround",
@@ -42,9 +42,20 @@ return {
     },
 
     -- coc.nvim
-    -- ["neoclide/coc.nvim"] = {
-    --     branch = "release",
-    -- },
+    ["neoclide/coc.nvim"] = {
+        branch = "release",
+    },
+
+    -- nvim-treesitter
+    ["nvim-treesitter/nvim-treesitter"] = {
+        ["do"] = ":TSUpdate",
+    },
+
+    -- plenary.nvim
+    "nvim-lua/plenary.nvim",
+
+    -- telescope.nvim
+    "nvim-telescope/telescope.nvim",
 
 }
 

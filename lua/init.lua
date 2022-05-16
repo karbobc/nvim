@@ -16,9 +16,10 @@ config.options = function()
     end
 end
 
+
 -- ===== packer plugings ======
 config.packer = function()
-    -- use vim-plug manage the plugins 
+    -- use vim-plug manage the plugins
     local plug = vim.fn["plug#"]
     -- vim-plug begin
     vim.call("plug#begin", stdpath("data") .. "/plugged")
@@ -39,26 +40,6 @@ end
 
 
 -- ===== plugins config =====
--- nvim-web-devicons
-config.nvim_web_devicons = function()
-    local ok, plugin = pcall(require, "nvim-web-devicons")
-    if not ok then
-        log("nvim-web-devicons not found")
-        return
-    end
-    plugin.setup({
-        override = {
-            zsh = {
-                icon = "",
-                color = "#428850",
-                cterm_color = "65",
-                name = "Zsh"
-            },
-        },
-        default = true,
-    })
-end
-
 -- lualine
 config.lualine = function()
     local ok, plugin = pcall(require, "lualine")
@@ -68,7 +49,7 @@ config.lualine = function()
     end
     plugin.setup({
         options = {
-            icons_enabled = false,
+            icons_enabled = true,
             theme = "vscode",
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
@@ -80,9 +61,9 @@ config.lualine = function()
             lualine_a = { "mode" },
             lualine_b = { "branch", "diagnostics" },
             lualine_c = { "filename" },
-            lualine_x = { "encoding", "fileformat", "filetype" },
+            lualine_x = { "encoding", "filetype" },
             lualine_y = { "progress" },
-            lualine_z = { "location" }
+            lualine_z = { "%l/%L" }
         },
         inactive_sections = {
             lualine_a = {},
@@ -101,7 +82,7 @@ end
 config.bufferline = function()
     local ok, plugin = pcall(require, "bufferline")
     if not ok then
-        log("bufferline not found") 
+        log("bufferline not found")
         return
     end
     plugin.setup({
@@ -172,11 +153,8 @@ config.vscode = function()
     end
     vim.g.vscode_style = "dark"
     vim.g.vscode_transparent = 1
-    -- Enable italic comment
     vim.g.vscode_italic_comment = 1
-    -- Disable nvim-tree background color
     vim.g.vscode_disable_nvimtree_bg = true
-    -- vim.g.colorscheme = "vscode"
     vim.cmd("colorscheme vscode")
 end
 
@@ -214,7 +192,6 @@ config.autosave = function()
     })
 end
 
-
 -- Comment
 config.comment = function()
     local ok, plugin = pcall(require, "Comment")
@@ -223,6 +200,80 @@ config.comment = function()
         return
     end
     plugin.setup({})
+end
+
+-- nvim-treesitter
+config.treesitter = function()
+    local ok, plugin = pcall(require, "nvim-treesitter.configs")
+    if not ok then
+        log("treesitter not found")
+        return
+    end
+    plugin.setup({
+        -- A list of parser names, or "all"
+        ensure_installed = {
+            "c",
+            "lua",
+        },
+        -- Install parsers synchronously (only applied to `ensure_installed`)
+        sync_install = false,
+        -- List of parsers to ignore installing (for "all")
+        ignore_install = {},
+        highlight = {
+            enable = true,
+            -- list of language that will be disabled
+            -- NOTE: these are the names of the parsers and not the filetype.
+            disable = {},
+            -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+            -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+            -- Using this option may slow down your editor, and you may see some duplicate highlights.
+            -- Instead of true it can also be a list of languages
+            additional_vim_regex_highlighting = false,
+        }
+    })
+end
+
+-- telescope
+config.telescope = function()
+    local ok, plugin = pcall(require, "telescope")
+    if not ok then
+        log("telescope not found")
+        return
+    end
+    local builtin = require("telescope.builtin")
+    local actions = require("telescope.actions")
+    local previewers = require("telescope.previewers")
+
+    plugin.setup({
+        defaults = {
+            -- config_key = value,
+            mappings = {
+                i = {
+                    ["<Esc>"] = actions.close,
+                },
+            }
+        },
+        pickers = {
+            -- picker_name = {
+            --   picker_config_key = value,
+            --   ...
+            -- }
+            find_files = {
+                find_command = {
+                    "rg",
+                    "--files",
+                    "--hidden",
+                },
+            },
+        },
+        extensions = {
+            -- Your extension configuration goes here:
+            -- extension_name = {
+            --   extension_config_key = value,
+            -- }
+            -- please take a look at the readme of the extension you want to configure
+        }
+    })
 end
 
 -- ===== startup =====
