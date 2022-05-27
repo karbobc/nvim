@@ -13,4 +13,14 @@ return {
     relativenumber = true,
     cursorline     = true,
     termguicolors  = true,
+    ignorecase = true,
+    wrap = false,
+    wildmenu = true,
+    wildmode = "list:longest,full",
+    wildignore = "*.o,*.pyc",
+    backspace = "indent,eol,start",
+    ["g"] = {
+        mapleader = " ",
+    },
+
 }

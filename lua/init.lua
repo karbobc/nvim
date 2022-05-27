@@ -10,9 +10,14 @@ local config = {}
 
 -- ===== options config =====
 config.options = function()
-    local opt = vim.opt
     for k, v in pairs(require("options")) do
-        opt[k] = v
+        if k == "g" then
+            for i, j in pairs(v) do
+                vim.g[i] = j
+            end
+        else
+            vim.opt[k] = v
+        end
     end
 end
 
@@ -200,6 +205,17 @@ config.comment = function()
         return
     end
     plugin.setup({})
+end
+
+-- fzf
+config.fzf = function()
+    local options = { noremap = true, silent = true }
+    vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Files<cr>", options)
+    vim.api.nvim_set_keymap("n", "<leader>fl", "<cmd>Lines<cr>", options)
+    vim.api.nvim_set_keymap("n", "<leader>fbl", "<cmd>BLines<cr>", options)
+    vim.api.nvim_set_keymap("n", "<leader>ft", "<cmd>Tags<cr>", options)
+    vim.api.nvim_set_keymap("n", "<leader>fbt", "<cmd>BTags<cr>", options)
+    vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>History<cr>", options)
 end
 
 -- nvim-treesitter
