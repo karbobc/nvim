@@ -1,3 +1,3 @@
 
-require("init").startup()
+require("init").setup()
 

@@ -51,11 +51,5 @@ return {
         ["do"] = ":TSUpdate",
     },
 
-    -- plenary.nvim
-    "nvim-lua/plenary.nvim",
-
-    -- telescope.nvim
-    "nvim-telescope/telescope.nvim",
-
 }
 

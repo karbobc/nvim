@@ -1,5 +1,5 @@
 
--- init value
+-- package
 local plugins = require("plugins")
 local stdpath = vim.fn.stdpath
 local log = vim.notify
@@ -233,54 +233,12 @@ config.treesitter = function()
     })
 end
 
--- telescope
-config.telescope = function()
-    local ok, plugin = pcall(require, "telescope")
-    if not ok then
-        log("telescope not found")
-        return
-    end
-    local builtin = require("telescope.builtin")
-    local actions = require("telescope.actions")
-    local previewers = require("telescope.previewers")
-
-    plugin.setup({
-        defaults = {
-            -- config_key = value,
-            mappings = {
-                i = {
-                    ["<Esc>"] = actions.close,
-                },
-            }
-        },
-        pickers = {
-            -- picker_name = {
-            --   picker_config_key = value,
-            --   ...
-            -- }
-            find_files = {
-                find_command = {
-                    "rg",
-                    "--files",
-                    "--hidden",
-                },
-            },
-        },
-        extensions = {
-            -- Your extension configuration goes here:
-            -- extension_name = {
-            --   extension_config_key = value,
-            -- }
-            -- please take a look at the readme of the extension you want to configure
-        }
-    })
-end
 
 -- ===== startup =====
-config.startup = function()
+config.setup = function()
     config.packer()
     for name, func in pairs(config) do
-        if name ~= "startup" and name ~= "pakcer" then
+        if name ~= "setup" and name ~= "pakcer" then
             func()
         end
     end
