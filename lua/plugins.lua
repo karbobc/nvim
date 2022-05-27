@@ -51,5 +51,8 @@ return {
         ["do"] = ":TSUpdate",
     },
 
+    -- vim-oscyank
+    "ojroques/vim-oscyank",
+
 }
 
