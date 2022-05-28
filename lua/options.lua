@@ -4,6 +4,7 @@ return {
     encoding       = "utf-8",
     tabstop        = 4,
     shiftwidth     = 4,
+    softtabstop    = 4,
     expandtab      = true,
     smarttab       = true,
     incsearch      = true,
