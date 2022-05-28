@@ -20,6 +20,11 @@ _M.n = {
     { "<leader>fh", "<cmd>History<cr>", options },
     -- vim-oscyank
     { "<leader>y", "<cmd>OSCYank<cr>", options },
+    -- navigator
+    { "<c-h>", "<cmd>NavigatorLeft<cr>", options },
+    { "<c-l>", "<cmd>NavigatorRight<cr>", options },
+    { "<c-k>", "<cmd>NavigatorUp<cr>", options },
+    { "<c-j>", "<cmd>NavigatorDown<cr>", options },
 }
 
 -- insert mode map

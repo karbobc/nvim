@@ -248,6 +248,16 @@ config.treesitter = function()
     })
 end
 
+-- Navigator
+config.navigator = function()
+    local ok, plugin = pcall(require, "Navigator")
+    if not ok then
+        log("navigator not found")
+        return
+    end
+    plugin.setup()
+end
+
 -- ===== startup =====
 _M.setup = function()
     config._packer()

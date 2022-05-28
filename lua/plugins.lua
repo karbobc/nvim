@@ -54,5 +54,8 @@ return {
     -- vim-oscyank
     "ojroques/vim-oscyank",
 
+    -- Navigator.nvim
+    "numToStr/Navigator.nvim",
+
 }
 
