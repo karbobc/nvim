@@ -6,10 +6,11 @@ local log = vim.notify
 
 -- config table
 local config = {}
+local _M = {}
 
 
 -- ===== options config =====
-config.options = function()
+config._options = function()
     for k, v in pairs(require("options")) do
         if k == "g" then
             for i, j in pairs(v) do
@@ -32,7 +33,7 @@ config.keymaps = function()
 end
 
 -- ===== packer plugings ======
-config.packer = function()
+config._packer = function()
     -- use vim-plug manage the plugins
     local plug = vim.fn["plug#"]
     -- vim-plug begin
@@ -248,13 +249,15 @@ config.treesitter = function()
 end
 
 -- ===== startup =====
-config.setup = function()
-    config.packer()
+_M.setup = function()
+    config._packer()
+    config._options()
     for name, func in pairs(config) do
-        if name ~= "setup" and name ~= "pakcer" then
+        if not string.match(name, "_") then
             func()
         end
     end
 end
 
-return config
+return _M
+
