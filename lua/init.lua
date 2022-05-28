@@ -27,7 +27,7 @@ end
 config.keymaps = function()
     for mode, keymaps in pairs(require("keymaps")) do
         for _, map in pairs(keymaps) do
-            vim.api.nvim_set_keymap(mode, map[1], map[2], map[3] or {})
+            vim.keymap.set(mode, map[1], map[2], map[3] or {})
         end
     end
 end
