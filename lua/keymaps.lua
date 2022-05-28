@@ -9,6 +9,9 @@ local _M = {}
 
 -- normal mode map
 _M.n = {
+    -- bufferline
+    { "<tab>", "<cmd>BufferLineCycleNext<cr>", options },
+    { "<s-tab>", "<cmd>BufferLineCyclePrev<cr>", options },
     -- vim-easy-align
     { "<leader>ga", "<Plug>(EasyAlign)" },
     -- fzf

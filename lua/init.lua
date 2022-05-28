@@ -3,6 +3,7 @@
 local plugins = require("plugins")
 local stdpath = vim.fn.stdpath
 local log = vim.notify
+local tostring = tostring
 
 -- config table
 local config = {}
@@ -102,15 +103,17 @@ config.bufferline = function()
     end
     plugin.setup({
         options = {
+            close_command = "bdelete! %d",
+            left_mouse_command = "buffer %d",
+            right_mouse_command = "buffer %d",
             buffer_close_icon = "",
-            close_command = "Bdelete %d",
             close_icon = "",
-            indicator_icon = " ",
-            left_trunc_marker = "",
+            indicator_icon = "▎",
             modified_icon = "●",
-            offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center"  }  },
-            right_mouse_command = "Bdelete! %d",
+            left_trunc_marker = "",
             right_trunc_marker = "",
+            color_icons = true,
+            offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center"  }  },
             show_close_icon = false,
             show_tab_indicators = true,
         },
