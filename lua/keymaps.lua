@@ -12,6 +12,7 @@ _M.n = {
     -- bufferline
     { "<tab>", "<cmd>BufferLineCycleNext<cr>", options },
     { "<s-tab>", "<cmd>BufferLineCyclePrev<cr>", options },
+    { "<leader>w", "<cmd>bdelete<cr>", options },
     -- vim-easy-align
     { "<leader>ga", "<Plug>(EasyAlign)" },
     -- fzf
