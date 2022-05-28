@@ -20,6 +20,7 @@ return {
     wildignore     = "*.o,*.pyc",
     backspace      = "indent,eol,start",
     foldenable     = true,
+    mouse          = "a",
 
     ["g"] = {
         mapleader = " ",
