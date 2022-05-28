@@ -13,7 +13,7 @@ config.options = function()
     for k, v in pairs(require("options")) do
         if k == "g" then
             for i, j in pairs(v) do
-                vim.g[i] = j
+                vim.g[i] = tostring(j)
             end
         else
             vim.opt[k] = v
@@ -21,6 +21,15 @@ config.options = function()
     end
 end
 
+
+-- ===== keymaps config ===== --
+config.keymaps = function()
+    for mode, keymaps in pairs(require("keymaps")) do
+        for _, map in pairs(keymaps) do
+            vim.api.nvim_set_keymap(mode, map[1], map[2], map[3] or {})
+        end
+    end
+end
 
 -- ===== packer plugings ======
 config.packer = function()
@@ -207,17 +216,6 @@ config.comment = function()
     plugin.setup({})
 end
 
--- fzf
-config.fzf = function()
-    local options = { noremap = true, silent = true }
-    vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Files<cr>", options)
-    vim.api.nvim_set_keymap("n", "<leader>fl", "<cmd>Lines<cr>", options)
-    vim.api.nvim_set_keymap("n", "<leader>fbl", "<cmd>BLines<cr>", options)
-    vim.api.nvim_set_keymap("n", "<leader>ft", "<cmd>Tags<cr>", options)
-    vim.api.nvim_set_keymap("n", "<leader>fbt", "<cmd>BTags<cr>", options)
-    vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>History<cr>", options)
-end
-
 -- nvim-treesitter
 config.treesitter = function()
     local ok, plugin = pcall(require, "nvim-treesitter.configs")
@@ -248,7 +246,6 @@ config.treesitter = function()
         }
     })
 end
-
 
 -- ===== startup =====
 config.setup = function()
