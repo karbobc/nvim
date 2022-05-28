@@ -75,16 +75,16 @@ config.lualine = function()
         sections = {
             lualine_a = { "mode" },
             lualine_b = { "branch", "diagnostics" },
-            lualine_c = { "filename" },
-            lualine_x = { "encoding", "filetype" },
+            lualine_c = {},
+            lualine_x = { "encoding" },
             lualine_y = { "progress" },
             lualine_z = { "%l/%L" }
         },
         inactive_sections = {
             lualine_a = {},
             lualine_b = {},
-            lualine_c = { "filename" },
-            lualine_x = { "location" },
+            lualine_c = {},
+            lualine_x = {},
             lualine_y = {},
             lualine_z = {}
         },
