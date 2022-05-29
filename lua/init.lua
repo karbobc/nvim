@@ -76,8 +76,8 @@ config.lualine = function()
         },
         sections = {
             lualine_a = { "mode" },
-            lualine_b = { "branch", "diagnostics" },
-            lualine_c = {},
+            lualine_b = { "branch", "diff" },
+            lualine_c = { "diagnostics" },
             lualine_x = { "encoding" },
             lualine_y = { "progress" },
             lualine_z = { "%l/%L" }
