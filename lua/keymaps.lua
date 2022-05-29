@@ -22,6 +22,11 @@ _M.n = {
     { "<leader>ft", "<cmd>Tags<cr>", options },
     { "<leader>fbt", "<cmd>BTags<cr>", options },
     { "<leader>fh", "<cmd>History<cr>", options },
+    { "<leader>fm", "<cmd>Marks<cr>", options },
+    { "<leader>fgf", "<cmd>GFiles<cr>", options },
+    { "<leader>fgs", "<cmd>GFiles?<cr>", options },
+    { "<leader>fgc", "<cmd>Commits<cr>", options },
+    { "<leader>fgbc", "<cmd>BCommits<cr>", options },
     -- vim-oscyank
     { "<leader>y", "<cmd>OSCYank<cr>", options },
     -- navigator
