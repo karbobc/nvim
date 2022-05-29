@@ -14,7 +14,7 @@ _M.n = {
     { "<s-tab>", "<cmd>BufferLineCyclePrev<cr>", options },
     { "<leader>w", "<cmd>bdelete<cr>", options },
     -- vim-easy-align
-    { "<leader>ga", "<Plug>(EasyAlign)" },
+    { "<leader>ea", "<Plug>(EasyAlign)" },
     -- fzf
     { "<leader>ff", "<cmd>Files<cr>", options },
     { "<leader>fl", "<cmd>Lines<cr>", options },
@@ -53,7 +53,7 @@ _M.i = {
 -- visual mode map
 _M.x = {
     -- vim-easy-align
-    { "<leader>ga", "<Plug>(EasyAlign)" },
+    { "<leader>ea", "<Plug>(EasyAlign)" },
 }
 
 return _M
