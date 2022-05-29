@@ -10,7 +10,7 @@ local config = {}
 local _M = {}
 
 
--- ===== options config =====
+-- ===== options config ===== --
 config._options = function()
     for k, v in pairs(require("options")) do
         if k == "g" then
@@ -33,7 +33,8 @@ config.keymaps = function()
     end
 end
 
--- ===== packer plugings ======
+
+-- ===== packer plugings ====== --
 config._packer = function()
     -- use vim-plug manage the plugins
     local plug = vim.fn["plug#"]
@@ -55,7 +56,7 @@ config._packer = function()
 end
 
 
--- ===== plugins config =====
+-- ===== plugins config ===== --
 -- lualine
 config.lualine = function()
     local ok, plugin = pcall(require, "lualine")
@@ -169,6 +170,7 @@ config.vscode = function()
         log("vscode not found")
         return
     end
+    vim.o.background = "dark"
     vim.g.vscode_style = "dark"
     vim.g.vscode_transparent = 1
     vim.g.vscode_italic_comment = 1
@@ -260,6 +262,7 @@ config.navigator = function()
     end
     plugin.setup()
 end
+
 
 -- ===== startup =====
 _M.setup = function()
