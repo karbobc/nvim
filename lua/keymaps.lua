@@ -34,6 +34,15 @@ _M.n = {
     { "<c-l>", "<cmd>NavigatorRight<cr>", options },
     { "<c-k>", "<cmd>NavigatorUp<cr>", options },
     { "<c-j>", "<cmd>NavigatorDown<cr>", options },
+    -- vim-gitgutter
+    { "<leader>gg", "<cmd>GitGutterToggle<cr>", options },
+    { "<leader>gb", "<cmd>GitGutterBufferToggle<cr>", options },
+    { "<leader>gs", "<cmd>GitGutterSignsToggle<cr>", options },
+    { "<leader>glh", "<cmd>GitGutterLineHighlightsToggle<cr>", options },
+    { "<leader>ghn", "<Plug>(GitGutterNextHunk)", options },
+    { "<leader>ghp", "<Plug>(GitGutterPrevHunk)", options },
+    { "<leader>ghs", "<Plug>(GitGutterStageHunk)", options },
+    { "<leader>ghu", "<Plug>(GitGutterUndoHunk)", options },
 }
 
 -- insert mode map

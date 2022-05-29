@@ -57,5 +57,8 @@ return {
     -- Navigator.nvim
     "numToStr/Navigator.nvim",
 
+    -- vim-gitgutter
+    "airblade/vim-gitgutter",
+
 }
 
