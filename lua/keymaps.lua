@@ -27,6 +27,14 @@ _M.n = {
     { "<leader>fgs", "<cmd>GFiles?<cr>", options },
     { "<leader>fgc", "<cmd>Commits<cr>", options },
     { "<leader>fgbc", "<cmd>BCommits<cr>", options },
+    -- coc.nvim
+    { "gd", "<Plug>(coc-definition)", options },
+    { "gy", "<Plug>(coc-type-definition)", options },
+    { "gi", "<Plug>(coc-implementation)", options },
+    { "gr", "<Plug>(coc-references)", options },
+    { "<leader>cf", "<Plug>(coc-format-selected)", options },
+    { "<leader>cdn", "<Plug>(coc-diagnostic-next)", options },
+    { "<leader>cdp", "<Plug>(coc-diagnostic-prev)", options },
     -- vim-oscyank
     { "<leader>y", "<cmd>OSCYank<cr>", options },
     -- navigator
@@ -54,6 +62,8 @@ _M.i = {
 _M.x = {
     -- vim-easy-align
     { "<leader>ea", "<Plug>(EasyAlign)" },
+    -- coc.nvim
+    { "<leader>cf", "<Plug>(coc-format-selected)", options },
 }
 
 return _M
