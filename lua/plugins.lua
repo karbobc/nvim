@@ -60,5 +60,8 @@ return {
     -- vim-gitgutter
     "airblade/vim-gitgutter",
 
+    -- nvim-ts-rainbow
+    "p00f/nvim-ts-rainbow",
+
 }
 
