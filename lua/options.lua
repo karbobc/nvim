@@ -17,7 +17,6 @@ return {
     ignorecase     = true,
     wrap           = false,
     wildmenu       = true,
-    wildmode       = "list:longest,full",
     wildignore     = "*.o,*.pyc",
     backspace      = "indent,eol,start",
     foldenable     = true,
