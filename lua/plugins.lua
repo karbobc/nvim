@@ -63,5 +63,8 @@ return {
     -- nvim-ts-rainbow
     "p00f/nvim-ts-rainbow",
 
+    -- alpha-nvim
+    "goolord/alpha-nvim",
+
 }
 

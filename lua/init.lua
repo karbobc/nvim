@@ -280,6 +280,24 @@ config.navigator = function()
     plugin.setup()
 end
 
+-- dashboard
+config.dashboard = function()
+    local ok, plugin = pcall(require, "alpha")
+    if not ok then
+        log("alpha not found")
+        return
+    end
+    local dashbaord = require("alpha.themes.dashboard")
+    dashbaord.section.buttons.val = {
+        dashbaord.button("e", "📄 New File", "<cmd>ene<cr>"),
+        dashbaord.button("SPC f f", "🧐 Find Files", "<cmd>Files<cr>"),
+        dashbaord.button("SPC f h", "🕣 Open Recent", "<cmd>History<cr>"),
+        dashbaord.button("SPC f m", "📑 Find Bookmarks", "<cmd>Marks<cr>"),
+        dashbaord.button("q", "💤 Quit Nvim", "<cmd>qa<cr>"),
+    }
+    plugin.setup(dashbaord.config)
+end
+
 
 -- ===== startup =====
 _M.setup = function()
