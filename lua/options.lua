@@ -26,6 +26,16 @@ return {
 
     ["g"] = {
         mapleader = " ",
+        -- coc.nvim
+        ["coc_global_extensions"] = {
+            "coc-json",
+            "coc-yaml",
+            "coc-sh",
+            "coc-clangd",
+            "coc-sumneko-lua",
+            "coc-docker",
+            "coc-pyright",
+        },
     },
 
 }

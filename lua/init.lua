@@ -3,7 +3,6 @@
 local plugins = require("plugins")
 local stdpath = vim.fn.stdpath
 local log = vim.notify
-local tostring = tostring
 
 -- config table
 local config = {}
@@ -15,7 +14,7 @@ config._options = function()
     for k, v in pairs(require("options")) do
         if k == "g" then
             for i, j in pairs(v) do
-                vim.g[i] = tostring(j)
+                vim.g[i] = j
             end
         else
             vim.opt[k] = v
