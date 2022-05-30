@@ -22,6 +22,7 @@ return {
     backspace      = "indent,eol,start",
     foldenable     = true,
     mouse          = "a",
+    hlsearch       = false,
 
     ["g"] = {
         mapleader = " ",
