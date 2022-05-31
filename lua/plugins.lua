@@ -69,5 +69,8 @@ return {
     -- vim-startuptime
     "dstein64/vim-startuptime",
 
+    -- marks.nvim
+    "chentoast/marks.nvim",
+
 }
 
