@@ -19,7 +19,9 @@ return {
     wildmenu       = true,
     wildignore     = "*.o,*.pyc",
     backspace      = "indent,eol,start",
-    foldenable     = true,
+    foldenable     = false,
+    foldmethod     = "indent",
+    foldlevel      = 999,
     mouse          = "a",
     hlsearch       = false,
 
