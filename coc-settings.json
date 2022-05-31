@@ -1,3 +1,35 @@
 {
-  "Lua.telemetry.enable": false
+  "json.enable": true,
+  "json.format.enable": true,
+
+  "yaml.enable": true,
+  "yaml.format.enable": true,
+  "yaml.format.singleQuote": false,
+  "yaml.format.bracketSpacing": true,
+  "yaml.validate": true,
+  "yaml.hover": true,
+  "yaml.completion": true,
+  "yaml.schemaStore.enable": true,
+  "yaml.schemaStore.url": "https://www.schemastore.org/api/json/catalog.json",
+
+  "sh.enable": true,
+
+  "clangd.enabled": true,
+  "clangd.path": "~/.config/nvim/lsp-server/clangd_14.0.3/bin/clangd",
+
+  "sumneko-lua.enable": true,
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.telemetry.enable": false,
+  "Lua.runtime.version": "LuaJIT",
+  "Lua.runtime.unicodeName": true,
+  "Lua.runtime.path": [
+      "?.lua",
+      "?/init.lua",
+      "?/?.lua"
+  ],
+  "Lua.workspace.library": [],
+
+  "docker.enable": true,
+
+  "pyright.enable": true
 }
