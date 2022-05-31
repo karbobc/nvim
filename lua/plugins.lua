@@ -66,5 +66,8 @@ return {
     -- alpha-nvim
     "goolord/alpha-nvim",
 
+    -- vim-startuptime
+    "dstein64/vim-startuptime",
+
 }
 
