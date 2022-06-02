@@ -24,6 +24,7 @@ return {
     foldlevel      = 999,
     mouse          = "a",
     hlsearch       = false,
+    scrolloff      = 5,
 
     ["g"] = {
         mapleader = " ",
