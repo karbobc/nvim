@@ -1,11 +1,12 @@
 # Quick Start
 
-## Install
+## Installation
+### Linux
 ```shell
 git clone https://github.com/karbob666/nvim ~/.config/nvim
 ```
 
 ## Plugin Install
-- enter `nvim`
-- enter command `:PlugInstall`
+1. enter command `nvim`
+2. use `vim-plug` install plugins `:PlugInstall`
 
