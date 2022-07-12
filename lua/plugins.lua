@@ -80,5 +80,8 @@ return {
         tag = "v2.*",
     },
 
+    -- which-key.nvim
+    "folke/which-key.nvim",
+
 }
 

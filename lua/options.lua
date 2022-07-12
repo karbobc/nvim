@@ -28,6 +28,7 @@ return {
     sidescrolloff  = 10,
     hidden         = true,
     autochdir      = true,
+    timeoutlen     = 500,
 
     ["g"] = {
         mapleader = " ",

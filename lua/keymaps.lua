@@ -45,8 +45,8 @@ _M.n = {
     { "<c-j>", "<cmd>NavigatorDown<cr>", options },
     -- vim-gitgutter
     { "<leader>gg", "<cmd>GitGutterToggle<cr>", options },
-    { "<leader>gb", "<cmd>GitGutterBufferToggle<cr>", options },
-    { "<leader>gs", "<cmd>GitGutterSignsToggle<cr>", options },
+    { "<leader>gbb", "<cmd>GitGutterBufferToggle<cr>", options },
+    { "<leader>gss", "<cmd>GitGutterSignsToggle<cr>", options },
     { "<leader>glh", "<cmd>GitGutterLineHighlightsToggle<cr>", options },
     { "<leader>ghn", "<Plug>(GitGutterNextHunk)", options },
     { "<leader>ghp", "<Plug>(GitGutterPrevHunk)", options },
