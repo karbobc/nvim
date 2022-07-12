@@ -75,5 +75,10 @@ return {
     -- indent-blankline.nvim
     "lukas-reineke/indent-blankline.nvim",
 
+    -- toggleterm.nvim
+    ["akinsho/toggleterm.nvim"] = {
+        tag = "v2.*",
+    },
+
 }
 
