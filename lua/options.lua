@@ -26,6 +26,7 @@ return {
     hlsearch       = false,
     scrolloff      = 5,
     sidescrolloff  = 10,
+    hidden         = true,
 
     ["g"] = {
         mapleader = " ",
