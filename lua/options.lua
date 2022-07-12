@@ -25,6 +25,7 @@ return {
     mouse          = "a",
     hlsearch       = false,
     scrolloff      = 5,
+    sidescrolloff  = 10,
 
     ["g"] = {
         mapleader = " ",
