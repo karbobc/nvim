@@ -27,6 +27,7 @@ return {
     scrolloff      = 5,
     sidescrolloff  = 10,
     hidden         = true,
+    autochdir      = true,
 
     ["g"] = {
         mapleader = " ",
