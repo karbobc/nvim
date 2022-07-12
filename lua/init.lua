@@ -348,6 +348,19 @@ config.bookmarks = function ()
     })
 end
 
+-- indent-blankline
+config.indentline = function()
+    local ok, plugin = pcall(require, "indent_blankline")
+    if not ok then
+        log("indent-blankline not found")
+        return
+    end
+    plugin.setup({
+        -- highlight blankline in current context
+        show_current_context = true,
+    })
+end
+
 
 -- ===== startup =====
 _M.setup = function()

@@ -72,5 +72,8 @@ return {
     -- marks.nvim
     "chentoast/marks.nvim",
 
+    -- indent-blankline.nvim
+    "lukas-reineke/indent-blankline.nvim",
+
 }
 
