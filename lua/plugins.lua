@@ -97,5 +97,8 @@ return {
     -- neoscroll.nvim
     "karb94/neoscroll.nvim",
 
+    -- stabilize.nvim
+    "luukvbaal/stabilize.nvim",
+
 }
 
