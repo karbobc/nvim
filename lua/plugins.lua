@@ -88,5 +88,8 @@ return {
         tag = "v2",
     },
 
+    -- neoscroll.nvim
+    "karb94/neoscroll.nvim",
+
 }
 
