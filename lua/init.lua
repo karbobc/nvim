@@ -76,7 +76,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "notify")
     if not ok then
-        log("notify not found")
+        log("notify not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({
@@ -101,7 +101,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "lualine")
     if not ok then
-        log("lualine not found")
+        log("lualine not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({
@@ -139,7 +139,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "bufferline")
     if not ok then
-        log("bufferline not found")
+        log("bufferline not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({
@@ -212,7 +212,7 @@ end)
 table.insert(config, function()
     local ok, _ = pcall(require, "vscode")
     if not ok then
-        log("vscode not found")
+        log("vscode not found", vim.log.levels.WARN)
         return
     end
     vim.o.background = "dark"
@@ -227,7 +227,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "nvim-autopairs")
     if not ok then
-        log("autopairs not found")
+        log("autopairs not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({})
@@ -237,7 +237,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "autosave")
     if not ok then
-        log("autosave not found")
+        log("autosave not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({
@@ -261,7 +261,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "Comment")
     if not ok then
-        log("Comment not found")
+        log("Comment not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({})
@@ -271,7 +271,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "nvim-treesitter.configs")
     if not ok then
-        log("treesitter not found")
+        log("treesitter not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({
@@ -315,7 +315,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "Navigator")
     if not ok then
-        log("navigator not found")
+        log("navigator not found", vim.log.levels.WARN)
         return
     end
     plugin.setup()
@@ -325,7 +325,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "alpha")
     if not ok then
-        log("alpha not found")
+        log("alpha not found", vim.log.levels.WARN)
         return
     end
     local dashbaord = require("alpha.themes.dashboard")
@@ -343,7 +343,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "marks")
     if not ok then
-        log("bookmakrs not found")
+        log("bookmakrs not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({
@@ -394,7 +394,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "indent_blankline")
     if not ok then
-        log("indent-blankline not found")
+        log("indent-blankline not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({
@@ -407,7 +407,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "toggleterm")
     if not ok then
-        log("toggleterm not found")
+        log("toggleterm not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({
@@ -456,7 +456,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "which-key")
     if not ok then
-        log("which-key not found")
+        log("which-key not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({
@@ -558,7 +558,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "hop")
     if not ok then
-        log("hop not found")
+        log("hop not found", vim.log.levels.WARN)
         return
     end
     plugin.setup()
@@ -568,7 +568,7 @@ end)
 table.insert(config, function()
     local ok, plugin = pcall(require, "neoscroll")
     if not ok then
-        log("neoscroll not found")
+        log("neoscroll not found", vim.log.levels.WARN)
         return
     end
     plugin.setup({
