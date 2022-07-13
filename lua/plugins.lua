@@ -83,5 +83,10 @@ return {
     -- which-key.nvim
     "folke/which-key.nvim",
 
+    -- hop.nvim
+    ["phaazon/hop.nvim"] = {
+        tag = "v2",
+    },
+
 }
 

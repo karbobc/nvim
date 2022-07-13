@@ -513,6 +513,16 @@ config.whichkey = function()
     })
 end
 
+-- hop.nvim
+config.hop = function()
+    local ok, plugin = pcall(require, "hop")
+    if not ok then
+        log("hop not found")
+        return
+    end
+    plugin.setup()
+end
+
 
 -- ===== startup =====
 _M.setup = function()

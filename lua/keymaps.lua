@@ -52,6 +52,13 @@ _M.n = {
     { "<leader>ghp", "<Plug>(GitGutterPrevHunk)", options },
     { "<leader>ghs", "<Plug>(GitGutterStageHunk)", options },
     { "<leader>ghu", "<Plug>(GitGutterUndoHunk)", options },
+    -- hop.nvim
+    { "<leader>hc1", "<cmd>HopChar1<cr>", options },
+    { "<leader>hc2", "<cmd>HopChar2<cr>", options },
+    { "<leader>hl", "<cmd>HopLine<cr>", options },
+    { "<leader>hv", "<cmd>HopVertical<cr>", options },
+    { "<leader>hw", "<cmd>HopWord<cr>", options },
+    { "<leader>hp", "<cmd>HopPattern<cr>", options },
 }
 
 -- insert mode map
