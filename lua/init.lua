@@ -26,7 +26,7 @@ end
 
 
 -- ===== options config ===== --
-config._options = function()
+table.insert(config, function()
     for k, v in pairs(require("options")) do
         if k == "g" then
             for i, j in pairs(v) do
@@ -36,21 +36,21 @@ config._options = function()
             vim.opt[k] = v
         end
     end
-end
+end)
 
 
 -- ===== keymaps config ===== --
-config.keymaps = function()
+table.insert(config, function()
     for mode, keymaps in pairs(require("keymaps")) do
         for _, map in pairs(keymaps) do
             vim.keymap.set(mode, map[1], map[2], map[3] or {})
         end
     end
-end
+end)
 
 
 -- ===== packer plugings ====== --
-config._packer = function()
+table.insert(config, function()
     -- use vim-plug manage the plugins
     local plug = vim.fn["plug#"]
     -- vim-plug begin
@@ -68,12 +68,12 @@ config._packer = function()
     end
     -- vim-plug end
     vim.call("plug#end")
-end
+end)
 
 
 -- ===== plugins config ===== --
 -- notify
-config._notify = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "notify")
     if not ok then
         log("notify not found")
@@ -95,10 +95,10 @@ config._notify = function()
         render = "default",
         stages = "fade_in_slide_out",
     })
-end
+end)
 
 -- lualine
-config.lualine = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "lualine")
     if not ok then
         log("lualine not found")
@@ -133,10 +133,10 @@ config.lualine = function()
         tabline = {},
         extensions = {}
     })
-end
+end)
 
 -- bufferline
-config.bufferline = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "bufferline")
     if not ok then
         log("bufferline not found")
@@ -206,10 +206,10 @@ config.bufferline = function()
             },
         }
     })
-end
+end)
 
 -- vscode
-config.vscode = function()
+table.insert(config, function()
     local ok, _ = pcall(require, "vscode")
     if not ok then
         log("vscode not found")
@@ -221,20 +221,20 @@ config.vscode = function()
     vim.g.vscode_italic_comment = 1
     vim.g.vscode_disable_nvimtree_bg = true
     vim.cmd("colorscheme vscode")
-end
+end)
 
 -- autopairs
-config.autopairs = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "nvim-autopairs")
     if not ok then
         log("autopairs not found")
         return
     end
     plugin.setup({})
-end
+end)
 
 -- autosave
-config.autosave = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "autosave")
     if not ok then
         log("autosave not found")
@@ -255,20 +255,20 @@ config.autosave = function()
         clean_command_line_interval = 0,
         debounce_delay = 135
     })
-end
+end)
 
 -- Comment
-config.comment = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "Comment")
     if not ok then
         log("Comment not found")
         return
     end
     plugin.setup({})
-end
+end)
 
 -- nvim-treesitter
-config.treesitter = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "nvim-treesitter.configs")
     if not ok then
         log("treesitter not found")
@@ -309,20 +309,20 @@ config.treesitter = function()
             max_file_lines = 10000,
         }
     })
-end
+end)
 
 -- Navigator
-config.navigator = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "Navigator")
     if not ok then
         log("navigator not found")
         return
     end
     plugin.setup()
-end
+end)
 
 -- dashboard
-config.dashboard = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "alpha")
     if not ok then
         log("alpha not found")
@@ -337,10 +337,10 @@ config.dashboard = function()
         dashbaord.button("q", "💤 Quit Nvim", "<cmd>qa<cr>"),
     }
     plugin.setup(dashbaord.config)
-end
+end)
 
 -- bookmarks
-config.bookmarks = function ()
+table.insert(config, function()
     local ok, plugin = pcall(require, "marks")
     if not ok then
         log("bookmakrs not found")
@@ -388,10 +388,10 @@ config.bookmarks = function ()
             prev_bookmark1   = "mp",
         }
     })
-end
+end)
 
 -- indent-blankline
-config.indentline = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "indent_blankline")
     if not ok then
         log("indent-blankline not found")
@@ -401,10 +401,10 @@ config.indentline = function()
         -- highlight blankline in current context
         show_current_context = true,
     })
-end
+end)
 
 -- toggleterm.nvim
-config.toggleterm = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "toggleterm")
     if not ok then
         log("toggleterm not found")
@@ -450,10 +450,10 @@ config.toggleterm = function()
             border = "curved",
         }
     })
-end
+end)
 
 -- which-key
-config.whichkey = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "which-key")
     if not ok then
         log("which-key not found")
@@ -552,20 +552,20 @@ config.whichkey = function()
             v = { "j", "k" },
         },
     })
-end
+end)
 
 -- hop.nvim
-config.hop = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "hop")
     if not ok then
         log("hop not found")
         return
     end
     plugin.setup()
-end
+end)
 
 -- neoscroll.nvim
-config.neoscroll = function()
+table.insert(config, function()
     local ok, plugin = pcall(require, "neoscroll")
     if not ok then
         log("neoscroll not found")
@@ -595,18 +595,13 @@ config.neoscroll = function()
         -- Disable "Performance Mode" on all buffers.
         performance_mode = false,
     })
-end
+end)
 
 
 -- ===== startup =====
 _M.setup = function()
-    config._packer()
-    config._options()
-    config._notify()
-    for name, func in pairs(config) do
-        if not string.match(name, "_") then
-            func()
-        end
+    for _, func in pairs(config) do
+        func()
     end
 end
 
