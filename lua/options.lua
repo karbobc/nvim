@@ -41,6 +41,7 @@ return {
             "coc-sumneko-lua",
             "coc-docker",
             "coc-pyright",
+            "coc-markdownlint",
         },
     },
 
