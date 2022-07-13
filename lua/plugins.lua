@@ -3,6 +3,12 @@ return {
     -- nvim-web-devicons
     "kyazdani42/nvim-web-devicons",
 
+    -- plenary.nvim
+    "nvim-lua/plenary.nvim",
+
+    -- nvim-notify
+    "rcarriga/nvim-notify",
+
     -- lualine.nvim
     "nvim-lualine/lualine.nvim",
 

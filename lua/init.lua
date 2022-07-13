@@ -2,11 +2,27 @@
 -- package
 local plugins = require("plugins")
 local stdpath = vim.fn.stdpath
-local log = vim.notify
 
 -- config table
 local config = {}
 local _M = {}
+
+-- ===== utils ===== --
+local log = function(msg, level)
+    local ok, notify = pcall(require, "notify")
+    if not ok then
+        vim.notify(msg, level)
+        return
+    end
+    local ok, async = pcall(require, "plenary.async")
+    if not ok then
+        notify(msg, level)
+        return
+    end
+    async.run(function()
+        notify.async(msg, level)
+    end)
+end
 
 
 -- ===== options config ===== --
@@ -56,6 +72,31 @@ end
 
 
 -- ===== plugins config ===== --
+-- notify
+config._notify = function()
+    local ok, plugin = pcall(require, "notify")
+    if not ok then
+        log("notify not found")
+        return
+    end
+    plugin.setup({
+        background_colour = "#000000",
+        fps = 60,
+        icons = {
+            DEBUG = "",
+            ERROR = "",
+            INFO = "",
+            TRACE = "✎",
+            WARN = ""
+        },
+        level = vim.log.levels.INFO,
+        timeout = 3000,
+        minimum_width = 50,
+        render = "default",
+        stages = "fade_in_slide_out",
+    })
+end
+
 -- lualine
 config.lualine = function()
     local ok, plugin = pcall(require, "lualine")
@@ -561,6 +602,7 @@ end
 _M.setup = function()
     config._packer()
     config._options()
+    config._notify()
     for name, func in pairs(config) do
         if not string.match(name, "_") then
             func()
