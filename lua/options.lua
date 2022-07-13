@@ -29,6 +29,7 @@ return {
     hidden         = true,
     autochdir      = true,
     timeoutlen     = 500,
+    background     = "dark",
 
     ["g"] = {
         mapleader = " ",

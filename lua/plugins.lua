@@ -9,6 +9,9 @@ return {
     -- nvim-notify
     "rcarriga/nvim-notify",
 
+    -- vscode.nvim
+    "Mofiqul/vscode.nvim",
+
     -- lualine.nvim
     "nvim-lualine/lualine.nvim",
 
@@ -16,9 +19,6 @@ return {
     ["akinsho/bufferline.nvim"] = {
         tag = "v2.*",
     },
-
-    -- vscode.nvim
-    "Mofiqul/vscode.nvim",
 
     -- nvim-autopairs
     "windwp/nvim-autopairs",

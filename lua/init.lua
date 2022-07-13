@@ -97,6 +97,27 @@ table.insert(config, function()
     })
 end)
 
+-- vscode
+table.insert(config, function()
+    local ok, plugin = pcall(require, "vscode")
+    if not ok then
+        log("vscode not found", vim.log.levels.WARN)
+        return
+    end
+    plugin.setup({
+        -- Enable transparent background
+        transparent = true,
+        -- Enable italic comment
+        italic_comments = true,
+        -- Disable nvim-tree background color
+        disable_nvimtree_bg = true,
+        -- Override colors (see ./lua/vscode/colors.lua)
+        color_overrides = {},
+        -- Override highlight groups (see ./lua/vscode/theme.lua)
+        group_overrides = {},
+    })
+end)
+
 -- lualine
 table.insert(config, function()
     local ok, plugin = pcall(require, "lualine")
@@ -206,21 +227,6 @@ table.insert(config, function()
             },
         }
     })
-end)
-
--- vscode
-table.insert(config, function()
-    local ok, _ = pcall(require, "vscode")
-    if not ok then
-        log("vscode not found", vim.log.levels.WARN)
-        return
-    end
-    vim.o.background = "dark"
-    vim.g.vscode_style = "dark"
-    vim.g.vscode_transparent = 1
-    vim.g.vscode_italic_comment = 1
-    vim.g.vscode_disable_nvimtree_bg = true
-    vim.cmd("colorscheme vscode")
 end)
 
 -- autopairs
