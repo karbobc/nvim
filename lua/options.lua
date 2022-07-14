@@ -50,6 +50,8 @@ return {
             "coc-pyright",
             "coc-markdownlint",
         },
+        -- vim-illuminate
+        Illuminate_delay = 500,
     },
 
 }

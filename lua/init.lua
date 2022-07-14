@@ -8,6 +8,9 @@ local config = {}
 local _M = {}
 
 -- ===== utils ===== --
+--- log message using `nvim-notify` if exists
+--- @param msg string message
+--- @param level? number log level
 local log = function(msg, level)
     local ok, notify = pcall(require, "notify")
     if not ok then
@@ -454,6 +457,8 @@ table.insert(config, function()
             -- not natively supported but implemented in this plugin.
             -- 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
             border = "curved",
+            -- transparency of ternimal
+            winblend = 0,
         }
     })
 end)
