@@ -61,6 +61,8 @@ _M.n = {
     { "<leader>hv", "<cmd>HopVertical<cr>", options },
     { "<leader>hw", "<cmd>HopWord<cr>", options },
     { "<leader>hp", "<cmd>HopPattern<cr>", options },
+    -- nvim-tree
+    { "<leader>fe", "<cmd>NvimTreeToggle<cr>", options },
 }
 
 -- insert mode map

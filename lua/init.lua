@@ -155,7 +155,13 @@ table.insert(config, function()
             lualine_z = {}
         },
         tabline = {},
-        extensions = {}
+        extensions = {
+            "man",
+            "fzf",
+            "fugitive",
+            "nvim-tree",
+            "toggleterm",
+        },
     })
 end)
 
@@ -635,6 +641,37 @@ table.insert(config, function()
         },
         -- comma-separated list of autocmds that wil trigger the plugins window restore function
         nested = nil,
+    })
+end)
+
+-- nvim-tree.lua
+table.insert(config, function()
+    local ok, plugin = pcall(require, "nvim-tree")
+    if not ok then
+        log("nvim-tree not found", vim.log.levels.WARN)
+        return
+    end
+    plugin.setup({
+        sort_by = "case_sensitive",
+        view = {
+            adaptive_size = false,
+            mappings = {
+                custom_only = false,
+                list = {},
+            }
+        },
+        renderer = {
+            group_empty = true,
+            highlight_git = true,
+            indent_markers = {
+                enable = true,
+            },
+        },
+        filters = {
+            dotfiles = false,
+            custom = { "^.git$" },
+            exclude = { "^.gitignore$" },
+        },
     })
 end)
 

@@ -12,6 +12,11 @@ return {
     -- vscode.nvim
     "Mofiqul/vscode.nvim",
 
+    -- nvim-tree.lua
+    ["kyazdani42/nvim-tree.lua"] = {
+        tag = "nightly",
+    },
+
     -- lualine.nvim
     "nvim-lualine/lualine.nvim",
 
