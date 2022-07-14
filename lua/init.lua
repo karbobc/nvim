@@ -343,15 +343,15 @@ table.insert(config, function()
     log("alpha not found", vim.log.levels.WARN)
     return
   end
-  local dashbaord = require("alpha.themes.dashboard")
-  dashbaord.section.buttons.val = {
-    dashbaord.button("e", "📄 New File", "<cmd>ene<cr>"),
-    dashbaord.button("SPC f f", "🧐 Find Files", "<cmd>Files<cr>"),
-    dashbaord.button("SPC f h", "🕣 Open Recent", "<cmd>History<cr>"),
-    dashbaord.button("SPC f m", "📑 Find Bookmarks", "<cmd>Marks<cr>"),
-    dashbaord.button("q", "💤 Quit Nvim", "<cmd>qa<cr>"),
+  local dashboard = require("alpha.themes.dashboard")
+  dashboard.section.buttons.val = {
+    dashboard.button("e", "📄 New File", "<cmd>ene<cr>"),
+    dashboard.button("SPC f f", "🧐 Find Files", "<cmd>Files<cr>"),
+    dashboard.button("SPC f h", "🕣 Open Recent", "<cmd>History<cr>"),
+    dashboard.button("SPC f m", "📑 Find Bookmarks", "<cmd>Marks<cr>"),
+    dashboard.button("q", "💤 Quit Nvim", "<cmd>qa<cr>"),
   }
-  plugin.setup(dashbaord.config)
+  plugin.setup(dashboard.config)
 end)
 
 -- bookmarks
