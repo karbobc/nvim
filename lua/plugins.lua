@@ -108,4 +108,7 @@ return {
   -- vim-illuminate
   "RRethy/vim-illuminate",
 
+  -- undotree
+  "mbbill/undotree",
+
 }

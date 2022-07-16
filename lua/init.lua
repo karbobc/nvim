@@ -675,6 +675,15 @@ table.insert(config, function()
   })
 end)
 
+-- undotree
+table.insert(config, function()
+  local undodir = "/tmp/undodir"
+  if vim.fn.has("persistent_undo") then
+    vim.opt["undodir"] = undodir
+    vim.opt["undofile"] = true
+  end
+end)
+
 
 -- ===== startup =====
 _M.setup = function()

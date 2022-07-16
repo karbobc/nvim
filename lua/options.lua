@@ -52,6 +52,13 @@ return {
     },
     -- vim-illuminate
     Illuminate_delay = 500,
+    -- undotree
+    undotree_DiffAutoOpen = 1,
+    undotree_SetFocusWhenToggle = 1,
+    undotree_ShortIndicators = 1,
+    undotree_WindowLayout = 2,
+    undotree_DiffpanelHeight = 10,
+    undotree_SplitWidth = 24,
   },
 
 }
