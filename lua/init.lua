@@ -184,7 +184,10 @@ table.insert(config, function()
       modified_icon = "●",
       left_trunc_marker = "",
       right_trunc_marker = "",
-      offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "center" } },
+      offsets = {
+        { filetype = "NvimTree", text = "File Explorer", text_align = "center" },
+        { filetype = "undotree", text = "Undo Tree", text_align = "center" },
+      },
       color_icons = true,
       show_buffer_icons = true,
       show_buffer_close_icons = true,
@@ -628,16 +631,8 @@ table.insert(config, function()
     forcemark = nil,
     -- do not manage windows matching these file/buftypes
     ignore = {
-      filetype = {
-        "help",
-        "list",
-        "Trouble"
-      },
-      buftype = {
-        "terminal",
-        "quickfix",
-        "loclist"
-      },
+      filetype = {},
+      buftype = {},
     },
     -- comma-separated list of autocmds that wil trigger the plugins window restore function
     nested = nil,
@@ -678,7 +673,8 @@ end)
 -- undotree
 table.insert(config, function()
   local undodir = "/tmp/undodir"
-  if vim.fn.has("persistent_undo") then
+  if vim.fn.has("persistent_undo") == 1 then
+    vim.fn.mkdir(undodir, "p", 0700)
     vim.opt["undodir"] = undodir
     vim.opt["undofile"] = true
   end
