@@ -31,8 +31,8 @@ return {
   -- vim-fugitive
   "tpope/vim-fugitive",
 
-  -- AutoSave.nvim
-  "Pocco81/AutoSave.nvim",
+  -- auto-save.nvim
+  "Pocco81/auto-save.nvim",
 
   -- vim-easy-align
   "junegunn/vim-easy-align",
