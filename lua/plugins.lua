@@ -111,4 +111,7 @@ return {
   -- undotree
   "mbbill/undotree",
 
+  -- editorconfig-vim
+  "editorconfig/editorconfig-vim",
+
 }

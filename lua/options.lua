@@ -50,6 +50,11 @@ return {
       "coc-pyright",
       "coc-markdownlint",
     },
+    -- editorconfig-vim
+    ["EditorConfig_exclude_patterns"] = {
+      "fugitive://.*",
+      "scp://.*",
+    },
     -- vim-illuminate
     Illuminate_delay = 500,
     -- undotree
