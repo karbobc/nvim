@@ -180,13 +180,23 @@ table.insert(config, function()
       middle_mouse_command = nil,
       close_icon = "",
       buffer_close_icon = "",
-      indicator_icon = "▎",
+      indicator = { icon = "▎", style = "icon" },
       modified_icon = "●",
       left_trunc_marker = "",
       right_trunc_marker = "",
       offsets = {
-        { filetype = "NvimTree", text = "File Explorer", text_align = "center" },
-        { filetype = "undotree", text = "Undo Tree", text_align = "center" },
+        {
+          filetype = "NvimTree",
+          text = "File Explorer",
+          text_align = "center",
+          separator = true,
+        },
+        {
+          filetype = "undotree",
+          text = "Undo Tree",
+          text_align = "center",
+          separator = true,
+        },
       },
       color_icons = true,
       show_buffer_icons = true,
@@ -196,48 +206,7 @@ table.insert(config, function()
       show_tab_indicators = true,
       separator_style = "thin",
     },
-    highlights = {
-      fill = {
-        guifg = { attribute = "fg", highlight = "Normal" },
-        guibg = { attribute = "bg", highlight = "StatusLineNC" },
-      },
-      background = {
-        guifg = { attribute = "fg", highlight = "Normal" },
-        guibg = { attribute = "bg", highlight = "StatusLine" },
-      },
-      buffer_visible = {
-        guifg = { attribute = "fg", highlight = "Normal" },
-        guibg = { attribute = "bg", highlight = "Normal" },
-      },
-      buffer_selected = {
-        guifg = { attribute = "fg", highlight = "Normal" },
-        guibg = { attribute = "bg", highlight = "Normal" },
-      },
-      separator = {
-        guifg = { attribute = "bg", highlight = "Normal" },
-        guibg = { attribute = "bg", highlight = "StatusLine" },
-      },
-      separator_selected = {
-        guifg = { attribute = "fg", highlight = "Special" },
-        guibg = { attribute = "bg", highlight = "Normal" },
-      },
-      separator_visible = {
-        guifg = { attribute = "fg", highlight = "Normal" },
-        guibg = { attribute = "bg", highlight = "StatusLineNC" },
-      },
-      close_button = {
-        guifg = { attribute = "fg", highlight = "Normal" },
-        guibg = { attribute = "bg", highlight = "StatusLine" },
-      },
-      close_button_selected = {
-        guifg = { attribute = "fg", highlight = "Normal" },
-        guibg = { attribute = "bg", highlight = "Normal" },
-      },
-      close_button_visible = {
-        guifg = { attribute = "fg", highlight = "Normal" },
-        guibg = { attribute = "bg", highlight = "Normal" },
-      },
-    }
+    highlights = nil,
   })
 end)
 
