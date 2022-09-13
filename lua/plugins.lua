@@ -44,7 +44,9 @@ return {
   "numToStr/Comment.nvim",
 
   -- fzf.vim
-  "~/.fzf",
+  ["junegunn/fzf"] = {
+    ["do"] = ":call fzf#install()",
+  },
   "junegunn/fzf.vim",
 
   -- vim-visual-multi
