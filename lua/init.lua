@@ -210,16 +210,6 @@ table.insert(config, function()
   })
 end)
 
--- autopairs
-table.insert(config, function()
-  local ok, plugin = pcall(require, "nvim-autopairs")
-  if not ok then
-    log("autopairs not found", vim.log.levels.WARN)
-    return
-  end
-  plugin.setup({})
-end)
-
 -- autosave
 table.insert(config, function()
   local ok, plugin = pcall(require, "auto-save")

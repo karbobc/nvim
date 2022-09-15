@@ -41,6 +41,7 @@ return {
     mapleader = " ",
     -- coc.nvim
     ["coc_global_extensions"] = {
+      "coc-pairs",
       "coc-json",
       "coc-yaml",
       "coc-sh",
