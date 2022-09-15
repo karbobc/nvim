@@ -68,8 +68,13 @@ _M.n = {
 
 -- insert mode map
 _M.i = {
-
+  {
+    "<cr>",
+    "coc#pum#visible() ? coc#pum#confirm() : '<C-g>u<CR><c-r>=coc#on_enter()<CR>'",
+    { noremap = true, silent = true, expr = true }
+  },
 }
+
 
 -- visual mode map
 _M.x = {
