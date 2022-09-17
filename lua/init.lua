@@ -688,7 +688,17 @@ table.insert(config, function()
       "nvimtree",
     },
     -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
-    filetypes_allowlist = {},
+    filetypes_allowlist = {
+      "lua",
+      "sh",
+      "go",
+      "c",
+      "cpp",
+      "python",
+      "vim",
+      "json",
+      "yaml",
+    },
     -- modes_denylist: modes to not illuminate, this overrides modes_allowlist
     modes_denylist = {},
     -- modes_allowlist: modes to illuminate, this is overriden by modes_denylist
@@ -702,7 +712,7 @@ table.insert(config, function()
     -- Use :echom synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
     providers_regex_syntax_allowlist = {},
     -- under_cursor: whether or not to illuminate under the cursor
-    under_cursor = true,
+    under_cursor = false,
   })
 end)
 
