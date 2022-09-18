@@ -1,4 +1,6 @@
 {
+  "coc.preferences.formatOnType": true,
+
   "json.enable": true,
   "json.format.enable": true,
 
