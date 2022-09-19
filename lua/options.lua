@@ -55,8 +55,6 @@ return {
       "fugitive://.*",
       "scp://.*",
     },
-    -- vim-illuminate
-    Illuminate_delay = 500,
     -- undotree
     undotree_DiffAutoOpen = 1,
     undotree_SetFocusWhenToggle = 1,
