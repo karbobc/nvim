@@ -210,6 +210,18 @@ table.insert(config, function()
   })
 end)
 
+-- autopairs
+table.insert(config, function()
+  local ok, plugin = pcall(require, "nvim-autopairs")
+  if not ok then
+    log("autopairs not found", vim.log.levels.WARN)
+    return
+  end
+  plugin.setup({
+    map_cr = false
+  })
+end)
+
 -- autosave
 table.insert(config, function()
   local ok, plugin = pcall(require, "auto-save")
@@ -231,7 +243,7 @@ table.insert(config, function()
       cleaning_interval = 1250,
     },
     -- vim events that trigger auto-save. See :h events
-    trigger_events = { "InsertLeave", "TextChanged" },
+    trigger_events = { "InsertLeave" },
     -- function that determines whether to save the current buffer or not
     -- return true: if buffer is ok to be saved
     -- return false: if it's not ok to be saved

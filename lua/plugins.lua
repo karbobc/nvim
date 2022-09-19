@@ -25,6 +25,10 @@ return {
     tag = "v2.*",
   },
 
+
+  -- nvim-autopairs
+  "windwp/nvim-autopairs",
+
   -- vim-fugitive
   "tpope/vim-fugitive",
 
