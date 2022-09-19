@@ -64,6 +64,8 @@ return {
     undotree_WindowLayout = 2,
     undotree_DiffpanelHeight = 10,
     undotree_SplitWidth = 24,
+    -- vim-oscyank
+    oscyank_term = "default",
   },
 
 }
