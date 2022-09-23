@@ -33,7 +33,7 @@ return {
   splitright     = true,
   splitbelow     = true,
   list           = true,
-  listchars      = "tab:➜ ",
+  listchars      = "tab: ➜",
   lazyredraw     = true,
   visualbell     = true,
 
