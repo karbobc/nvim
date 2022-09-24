@@ -108,9 +108,6 @@ return {
   -- stabilize.nvim
   "luukvbaal/stabilize.nvim",
 
-  -- vim-illuminate
-  "RRethy/vim-illuminate",
-
   -- undotree
   "mbbill/undotree",
 
