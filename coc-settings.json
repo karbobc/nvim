@@ -32,5 +32,14 @@
 
   "docker.enable": true,
 
-  "pyright.enable": true
+  "pyright.enable": true,
+
+  "toml.enabled": true,
+  "toml.schema.enabled": true,
+
+  "go.enable": true,
+  "go.goplsOptions": {
+    "usePlaceholders": true
+  }
+
 }

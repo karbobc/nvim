@@ -49,6 +49,8 @@ return {
       "coc-docker",
       "coc-pyright",
       "coc-markdownlint",
+      "coc-toml",
+      "coc-go",
     },
     -- editorconfig-vim
     ["EditorConfig_exclude_patterns"] = {
