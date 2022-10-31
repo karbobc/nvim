@@ -67,13 +67,7 @@ _M.n = {
 }
 
 -- insert mode map
-_M.i = {
-  {
-    "<cr>",
-    "coc#pum#visible() ? coc#pum#confirm() : v:lua.MPairs.autopairs_cr()",
-    { noremap = true, silent = true, expr = true }
-  },
-}
+_M.i = {}
 
 
 -- visual mode map

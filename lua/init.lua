@@ -220,6 +220,17 @@ table.insert(config, function()
   plugin.setup({
     map_cr = false
   })
+  -- completion confirm when coc popup
+  _G.AutoPairs = {}
+  AutoPairs.completion_confirm = function()
+    if vim.fn["coc#pum#visible"]() ~= 0  then
+        return vim.fn["coc#pum#confirm"]()
+    else
+        return plugin.autopairs_cr()
+    end
+  end
+  local options = { expr = true, noremap = true, silent = true }
+  vim.api.nvim_set_keymap("i" , "<cr>", "v:lua.AutoPairs.completion_confirm()", options)
 end)
 
 -- autosave
