@@ -702,7 +702,7 @@ table.insert(config, function()
     undodir = string.format("/tmp/%s", path)
   end
   if has("persistent_undo") == 1 then
-    vim.fn.mkdir(undodir, "p", 0700)
+    vim.fn.mkdir(undodir, "p")
     vim.opt["undodir"] = undodir
     vim.opt["undofile"] = true
   end
