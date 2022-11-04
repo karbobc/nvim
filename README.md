@@ -5,7 +5,7 @@
 ### Linux
 
 ```shell
-git clone https://github.com/karbob666/nvim ~/.config/nvim
+git clone https://github.com/karbobc/nvim ~/.config/nvim
 ```
 
 ## Plugin Install
