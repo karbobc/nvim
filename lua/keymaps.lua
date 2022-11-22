@@ -54,12 +54,14 @@ _M.n = {
   { "<leader>ghs", "<Plug>(GitGutterStageHunk)", options },
   { "<leader>ghu", "<Plug>(GitGutterUndoHunk)", options },
   -- hop.nvim
-  { "<leader>hc1", "<cmd>HopChar1<cr>", options },
-  { "<leader>hc2", "<cmd>HopChar2<cr>", options },
+  { "<leader>hc", "<cmd>HopChar1<cr>", options },
   { "<leader>hl", "<cmd>HopLine<cr>", options },
   { "<leader>hv", "<cmd>HopVertical<cr>", options },
   { "<leader>hw", "<cmd>HopWord<cr>", options },
+  { "<leader>ha", "<cmd>HopAnywhere<cr>", options },
   { "<leader>hp", "<cmd>HopPattern<cr>", options },
+  { "f", "<cmd>HopChar1CurrentLineAC<cr>", options },
+  { "F", "<cmd>HopChar1CurrentLineBC<cr>", options },
   -- nvim-tree
   { "<leader>fe", "<cmd>NvimTreeToggle<cr>", options },
   -- undotree
