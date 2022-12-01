@@ -708,6 +708,20 @@ table.insert(config, function()
   end
 end)
 
+-- nvim-lastplace
+table.insert(config, function()
+  local ok, plugin = pcall(require, "nvim-lastplace")
+  if not ok then
+    log("nvim-lastplace not found", vim.log.levels.WARN)
+    return
+  end
+  plugin.setup {
+    lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+    lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+    lastplace_open_folds = true
+  }
+end)
+
 
 -- ===== startup =====
 _M.setup = function()

@@ -114,4 +114,7 @@ return {
   -- editorconfig-vim
   "editorconfig/editorconfig-vim",
 
+  -- nvim-lastplace
+  "ethanholz/nvim-lastplace",
+
 }
