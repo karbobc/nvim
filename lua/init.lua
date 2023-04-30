@@ -119,6 +119,7 @@ table.insert(config, function()
     -- Override highlight groups (see ./lua/vscode/theme.lua)
     group_overrides = {},
   })
+  plugin.load()
 end)
 
 -- lualine
