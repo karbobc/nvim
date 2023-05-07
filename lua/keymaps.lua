@@ -38,7 +38,7 @@ _M.n = {
   { "<leader>cdp", "<Plug>(coc-diagnostic-prev)", options },
   { "<leader>ca", "<Plug>(coc-codeaction-selected)", options },
   -- vim-oscyank
-  { "<leader>y", "<cmd>OSCYank<cr>", options },
+  { "<leader>y", "<cmd>OSCYankVisual<cr>", options },
   -- navigator
   { "<c-h>", "<cmd>NavigatorLeft<cr>", options },
   { "<c-l>", "<cmd>NavigatorRight<cr>", options },
@@ -83,6 +83,7 @@ _M.x = {
   { "af", "<Plug>(coc-funcobj-a)", options },
   { "ic", "<Plug>(coc-classobj-i)", options },
   { "ac", "<Plug>(coc-classobj-a)", options },
+  { "<leader>y", "<Plug>OSCYankVisual", options }
 }
 
 return _M
