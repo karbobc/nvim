@@ -1,7 +1,18 @@
 return {
   "rcarriga/nvim-notify",
   opts = {
+    background_colour = "#000000",
     timeout = 3000,
+    fps = 60,
+    icons = {
+      DEBUG = "",
+      ERROR = "",
+      INFO = "",
+      TRACE = "✎",
+      WARN = ""
+    },
+    render = "default",
+    stages = "fade_in_slide_out",
     max_height = function()
       return math.floor(vim.o.lines * 0.75)
     end,
