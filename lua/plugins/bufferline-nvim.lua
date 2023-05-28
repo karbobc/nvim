@@ -1,7 +1,14 @@
 return {
   "akinsho/bufferline.nvim",
   version = "*",
+  lazy = true,
+  event = "VeryLazy",
   dependencies = "nvim-tree/nvim-web-devicons",
+  keys = {
+    { "<tab>", "<cmd>BufferLineCycleNext<cr>", desc = "BufferLine Cycle Next" },
+    { "<s-tab>", "<cmd>BufferLineCyclePrev<cr>", desc = "BufferLine Cycle Prev" },
+    { "<leader>w", "<cmd>bdelete<cr>", desc = "BufferLine Buffer Delete" },
+  },
   opts = {
     options = {
       close_command = "bdelete! %d",

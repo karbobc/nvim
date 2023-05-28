@@ -2,6 +2,9 @@ return {
   "mbbill/undotree",
   lazy = true,
   event = "VeryLazy",
+  keys = {
+    { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Undotree Toggle" },
+  },
   config = function()
     local undodir
     local path = "undodir"
