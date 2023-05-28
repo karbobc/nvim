@@ -36,9 +36,12 @@ return {
   listchars      = "tab: ➜",
   lazyredraw     = true,
   visualbell     = true,
+  splitkeep      = "screen",
+  showmode       = false,
 
   ["g"] = {
     mapleader = " ",
+    maplocalleader = " ",
     -- coc.nvim
     ["coc_global_extensions"] = {
       "coc-json",
@@ -52,20 +55,6 @@ return {
       "coc-toml",
       "coc-go",
     },
-    -- editorconfig-vim
-    ["EditorConfig_exclude_patterns"] = {
-      "fugitive://.*",
-      "scp://.*",
-    },
-    -- undotree
-    undotree_DiffAutoOpen = 1,
-    undotree_SetFocusWhenToggle = 1,
-    undotree_ShortIndicators = 1,
-    undotree_WindowLayout = 2,
-    undotree_DiffpanelHeight = 10,
-    undotree_SplitWidth = 24,
-    -- vim-oscyank
-    oscyank_term = "default",
   },
 
 }
