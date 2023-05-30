@@ -42,19 +42,6 @@ return {
   ["g"] = {
     mapleader = " ",
     maplocalleader = " ",
-    -- coc.nvim
-    ["coc_global_extensions"] = {
-      "coc-json",
-      "coc-yaml",
-      "coc-sh",
-      "coc-clangd",
-      "coc-sumneko-lua",
-      "coc-docker",
-      "coc-pyright",
-      "coc-markdownlint",
-      "coc-toml",
-      "coc-go",
-    },
   },
 
 }
