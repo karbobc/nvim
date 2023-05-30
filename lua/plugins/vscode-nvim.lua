@@ -1,7 +1,7 @@
 return {
   "Mofiqul/vscode.nvim",
   lazy = true,
-  event = "BufEnter",
+  event = "VimEnter",
   config = function()
     local plugin = require("vscode")
     plugin.setup({
