@@ -1,7 +1,7 @@
 return {
   "Pocco81/auto-save.nvim",
   lazy = true,
-  event = "InsertLeave",
+  event = { "InsertLeave", "TextChanged" },
   opts = {
     -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
     enabled = true,
@@ -16,7 +16,7 @@ return {
       cleaning_interval = 1250,
     },
     -- vim events that trigger auto-save. See :h events
-    trigger_events = { "InsertLeave" },
+    trigger_events = { "InsertLeave", "TextChanged" },
     -- function that determines whether to save the current buffer or not
     -- return true: if buffer is ok to be saved
     -- return false: if it's not ok to be saved
