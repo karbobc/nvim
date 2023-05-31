@@ -54,6 +54,8 @@ return {
           awk_ls = {},
           -- bash
           bashls = {},
+          -- c, cpp
+          clangd = {},
           -- docker
           dockerls = {},
           -- docker compose
