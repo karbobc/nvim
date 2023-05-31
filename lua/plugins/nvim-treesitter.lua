@@ -24,6 +24,7 @@ return {
       "markdown_inline",
       "python",
       "regex",
+      "rust",
       "sql",
       "toml",
       "vim",
