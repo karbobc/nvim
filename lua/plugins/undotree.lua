@@ -15,7 +15,7 @@ return {
       undodir = string.format("/tmp/%s", path)
     end
     if has("persistent_undo") == 1 then
-      vim.fn.mkdir(undodir, "p")
+      vim.fn.mkdir(undodir, "p", "0o700")
       vim.opt["undodir"] = undodir
       vim.opt["undofile"] = true
     end
