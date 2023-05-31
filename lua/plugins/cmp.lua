@@ -39,21 +39,23 @@ return {
     },
     opts = function()
       local cmp = require("cmp")
+      local luasnip = require("luasnip")
       return {
         completion = {
           completeopt = "menu,menuone,noinsert",
         },
         snippet = {
           expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
           end,
         },
-        mapping = {
+        mapping = cmp.mapping.preset.insert ({
           ["<up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+          ["<esc>"] = cmp.mapping.abort(),
           -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
           ["<cr>"] = cmp.mapping.confirm({ select = true }),
-        },
+        }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
