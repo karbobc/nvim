@@ -58,6 +58,8 @@ return {
           dockerls = {},
           -- docker compose
           docker_compose_language_service = {},
+          -- cmake
+          neocmake = {},
           -- golang
           gopls = {},
           -- json
@@ -82,12 +84,51 @@ return {
               },
             },
           },
+          -- markdown
+          marksman = {},
+          -- python
+          pylsp = {
+            settings = {
+              pylsp = {
+                plugins = {
+                  autopep8 = {
+                    enabled = true,
+                  },
+                  flake8 = {
+                    enabled = true,
+                  },
+                  mccabe = {
+                    enabled = true,
+                  },
+                  preload = {
+                    enabled = true,
+                  },
+                  pycodestyle = {
+                    enabled = true,
+                  },
+                  pydocstyle = {
+                    enabled = true,
+                  },
+                  pyflakes = {
+                    enabled = true,
+                  },
+                  pylint = {
+                    enabled = true,
+                  },
+                  yapf = {
+                    enabled = true,
+                  },
+                },
+              },
+            },
+          },
           -- rust
           rust_analyzer = {},
           -- sql
           sqlls = {},
           -- toml
           taplo = {},
+          vimls = {},
           -- yaml
           yamlls = {
             settings = {
