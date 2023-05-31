@@ -12,7 +12,6 @@ return {
       "cpp",
       "cmake",
       "comment",
-      "dot",
       "dockerfile",
       "go",
       "gomod",
