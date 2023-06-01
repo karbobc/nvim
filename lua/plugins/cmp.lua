@@ -52,7 +52,7 @@ return {
         mapping = cmp.mapping.preset.insert ({
           ["<up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-          ["<esc>"] = cmp.mapping.abort(),
+          ["<c-e>"] = cmp.mapping.abort(),
           -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
           ["<cr>"] = cmp.mapping.confirm({ select = true }),
         }),
