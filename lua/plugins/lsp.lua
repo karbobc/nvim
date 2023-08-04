@@ -146,11 +146,12 @@ return {
     end,
     config = function(_, opts)
       local servers = opts.servers
+      local has_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
       local capabilities = vim.tbl_deep_extend(
         "force",
         {},
         vim.lsp.protocol.make_client_capabilities(),
-        require("cmp_nvim_lsp").default_capabilities(),
+        has_cmp and cmp_nvim_lsp.default_capabilities() or {},
         opts.capabilities or {}
       )
       -- setup by lspconfig
