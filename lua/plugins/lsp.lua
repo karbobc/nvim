@@ -17,7 +17,7 @@ return {
       {
         "hrsh7th/cmp-nvim-lsp",
         cond = function()
-          return require("lazy.core.config").plugins["nvim-cmp"] ~= nil
+          return require("lazy.core.config").spec.plugins["nvim-cmp"] ~= nil
         end,
       },
       {
