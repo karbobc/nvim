@@ -3,11 +3,12 @@ return {
   lazy = true,
   event = "VeryLazy",
   opts = {
-    -- for example, context is off by default, use this to turn it on
-    show_current_context = true,
+    scope = {
+      enabled = false,
+    },
   },
   config = function(_, opts)
-    local plugin = require("indent_blankline")
+    local plugin = require("ibl")
     plugin.setup(opts)
   end,
 }
