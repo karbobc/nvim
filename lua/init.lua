@@ -7,6 +7,11 @@ local config = {}
 local _M = {}
 
 
+-- ===== autocmd ===== --
+local autocmd = require("autocmd")
+autocmd.setup()
+
+
 -- ===== options config ===== --
 table.insert(config, function()
   for k, v in pairs(require("options")) do
@@ -108,7 +113,7 @@ table.insert(config, function()
 end)
 
 
--- ===== startup =====
+-- ===== startup ===== --
 _M.setup = function()
   for _, func in ipairs(config) do
     func()
