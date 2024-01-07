@@ -16,6 +16,8 @@ _M.i = {}
 
 -- visual mode map
 _M.x = {
+  -- formatting
+  { "=", "gq", options }
 }
 
 return _M
