@@ -33,6 +33,8 @@ return {
       long_message_to_split = true,
       -- enables an input dialog for inc-rename.nvim
       inc_rename = true,
+      -- add a border to hover docs and signature help
+      lsp_doc_border = true,
     },
   },
   config = function(_, opts)

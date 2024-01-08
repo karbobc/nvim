@@ -14,7 +14,7 @@ return {
   },
   opts = {
     -- the name of the command
-    cmd_name = "Rename",
+    cmd_name = "IncRename",
     -- the highlight group used for highlighting the identifier's new name
     hl_group = "Substitute",
     -- whether an empty new name should be previewed;
