@@ -64,7 +64,7 @@ table.insert(config, function()
     },
 
     ---@type number limit the maximum amount of concurrent tasks
-    concurrency = nil,
+    concurrency = jit.os:find("Windows") and (vim.loop.available_parallelism() * 2) or nil,
 
     install = {
       -- install missing plugins on startup. This doesn't increase startup time.
@@ -75,13 +75,22 @@ table.insert(config, function()
 
     -- automatically check for plugin updates
     checker = {
-      enabled = true,
+      enabled = false,
       ---@type number? set to 1 to check for updates very slowly
       concurrency = nil,
       -- get a notification when new updates are found
-      notify = false,
+      notify = true,
       -- check for updates every hour
       frequency = 3600,
+      -- check for pinned packages that can't be updated
+      check_pinned = false,
+    },
+
+    -- automatically check for config file changes and reload the ui
+    change_detection = {
+      enabled = false,
+      -- get a notification when changes are found
+      notify = true,
     },
 
     performance = {
