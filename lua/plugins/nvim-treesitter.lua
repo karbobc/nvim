@@ -4,6 +4,9 @@ return {
     lazy = true,
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
     ---@type TSconfig
     opts = {
       -- A list of parser names, or "all"
@@ -20,10 +23,12 @@ return {
         "lua",
         "luadoc",
         "json",
+        "jsonc",
         "make",
         "markdown",
         "markdown_inline",
         "python",
+        "query",
         "regex",
         "rust",
         "sql",
@@ -31,6 +36,20 @@ return {
         "vim",
         "vimdoc",
         "yaml",
+      },
+      textobjects = {
+        select = {
+          enable = true,
+          -- Automatically jump forward to textobj, similar to targets.vim
+          lookahead = true,
+          keymaps = {
+            ["aa"] = "@parameter.outer",
+            ["ia"] = "@parameter.inner",
+          },
+          -- If you set this to `true` (default is `false`) then any textobject is
+          -- extended to include preceding or succeeding whitespace.
+          include_surrounding_whitespace = true,
+        },
       },
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
