@@ -8,8 +8,10 @@ local _M = {}
 
 
 -- ===== autocmd ===== --
-local autocmd = require("autocmd")
-autocmd.setup()
+table.insert(config, function()
+  local autocmd = require("autocmd")
+  autocmd.setup()
+end)
 
 
 -- ===== options config ===== --
