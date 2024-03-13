@@ -5,6 +5,14 @@ local stdpath = vim.fn.stdpath
 -- config table
 local config = {}
 local _M = {}
+local vscode = require("vscode-neovim")
+
+
+-- ===== autocmd ===== --
+table.insert(config, function()
+  local autocmd = require("autocmd")
+  autocmd.setup()
+end)
 
 
 -- ===== options config ===== --
@@ -12,6 +20,8 @@ table.insert(config, function()
   vim.g.mapleader = " "
   vim.g.maplocalleader = " "
   vim.g.hlsearch = true
+  vim.g.ignorecase = true
+  vim.notify = vscode.notify
 end)
 
 
@@ -38,6 +48,7 @@ table.insert(config, function()
     spec = {
       { import = "plugins/flash-nvim" },
       { import = "plugins/nvim-surround" },
+      { import = "plugins/vscode-nvim" },
     },
 
     defaults = {
