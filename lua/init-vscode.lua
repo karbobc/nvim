@@ -37,6 +37,7 @@ table.insert(config, function()
 
     spec = {
       { import = "plugins/flash-nvim" },
+      { import = "plugins/nvim-surround" },
     },
 
     defaults = {
