@@ -1,6 +1,5 @@
 return {
   fileencoding   = "utf-8",
-  termencoding   = "utf-8",
   encoding       = "utf-8",
   tabstop        = 2,
   shiftwidth     = 2,
