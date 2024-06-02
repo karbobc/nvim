@@ -48,7 +48,8 @@ table.insert(config, function()
     spec = {
       { import = "plugins/flash-nvim" },
       { import = "plugins/nvim-surround" },
-      { import = "plugins/vscode-nvim" },
+      { import = "plugins/vim-visual-multi" },
+      { import = "plugins/vim-easy-align" },
     },
 
     defaults = {
