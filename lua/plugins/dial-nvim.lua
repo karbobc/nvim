@@ -3,10 +3,10 @@ return {
   lazy = true,
   event = "VeryLazy",
   keys = {
-    { "<c-a>", function() require("dial.map").inc_normal("default") end, mode = { "n" }, "Dial Increment" },
-    { "<c-x>", function() require("dial.map").dec_normal("default") end, mode = { "n" }, "Dial Decrement" },
-    { "<c-a>", function() require("dial.map").inc_visual("default") end, mode = { "v" }, "Dial Increment" },
-    { "<c-x>", function() require("dial.map").dec_visual("default") end, mode = { "v" }, "Dial Decrement" },
+    { "<c-a>", function() require("dial.map").manipulate("increment", "normal") end, mode = { "n" }, "Dial Increment" },
+    { "<c-x>", function() require("dial.map").manipulate("decrement", "normal") end, mode = { "n" }, "Dial Decrement" },
+    { "<c-a>", function() require("dial.map").manipulate("increment", "visual") end, mode = { "v" }, "Dial Increment" },
+    { "<c-x>", function() require("dial.map").manipulate("decrement", "visual") end, mode = { "v" }, "Dial Decrement" },
   },
   opts = function ()
     local augend = require("dial.augend")
