@@ -7,12 +7,10 @@ local options = {
 local _M = {}
 
 -- normal mode map
-_M.n = {
-}
+_M.n = {}
 
 -- insert mode map
 _M.i = {}
-
 
 -- visual mode map
 _M.x = {

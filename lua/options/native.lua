@@ -39,8 +39,7 @@ return {
   showmode       = false,
 
   ["g"] = {
-    mapleader = " ",
+    mapleader      = " ",
     maplocalleader = " ",
   },
-
 }

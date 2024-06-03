@@ -16,7 +16,8 @@ end)
 
 -- ===== options config ===== --
 table.insert(config, function()
-  for k, v in pairs(require("options")) do
+  local options_config = vim.g.vscode and require("options.vscode") or require("options.native")
+  for k, v in pairs(options_config) do
     if k == "g" then
       for i, j in pairs(v) do
         vim.g[i] = j
@@ -30,12 +31,22 @@ end)
 
 -- ===== keymaps config ===== --
 table.insert(config, function()
-  for mode, keymaps in pairs(require("keymaps")) do
+  local keymaps_config = vim.g.vscode and require("keymaps.vscode") or require("keymaps.native")
+  for mode, keymaps in pairs(keymaps_config) do
     for _, map in pairs(keymaps) do
       vim.keymap.set(mode, map[1], map[2], map[3] or {})
     end
   end
 end)
+
+
+-- ===== vscode config ===== --
+if vim.g.vscode then
+  local vscode = require("vscode")
+  table.insert(config, function()
+    vim.notify = vscode.notify
+  end)
+end
 
 
 -- ===== lazy.nvim config ===== --
@@ -53,11 +64,21 @@ table.insert(config, function()
     })
   end
   vim.opt.rtp:prepend(lazypath)
+  ---@type LazySpec plugin spec
+  local spec = { { import = "plugins" } }
+  if vim.g.vscode then
+    spec = {
+      { import = "plugins/flash-nvim" },
+      { import = "plugins/nvim-surround" },
+      { import = "plugins/vim-visual-multi" },
+      { import = "plugins/vim-easy-align" },
+      { import = "plugins/dial-nvim" },
+    }
+  end
   require("lazy").setup({
 
-    spec = {
-      { import = "plugins" },
-    },
+    ---@type LazySpec
+    spec = spec,
 
     defaults = {
       -- should plugins be lazy-loaded?
@@ -65,7 +86,7 @@ table.insert(config, function()
       version = nil,
     },
 
-    ---@type number limit the maximum amount of concurrent tasks
+    ---@type number? limit the maximum amount of concurrent tasks
     concurrency = jit.os:find("Windows") and (vim.loop.available_parallelism() * 2) or nil,
 
     install = {
