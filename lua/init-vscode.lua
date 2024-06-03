@@ -50,6 +50,7 @@ table.insert(config, function()
       { import = "plugins/nvim-surround" },
       { import = "plugins/vim-visual-multi" },
       { import = "plugins/vim-easy-align" },
+      { import = "plugins/dial-nvim" },
     },
 
     defaults = {
