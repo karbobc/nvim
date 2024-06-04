@@ -9,9 +9,29 @@ local vscode = require("vscode")
 
 -- normal mode map
 _M.n = {
-  { "<leader>w", "<cmd>q!<cr>",      options },
-  { "<tab>",     "<cmd>tabnext<cr>", options },
-  { "<s-tab>",   "<cmd>tabprev<cr>", options },
+  -- tab management
+  { "<leader>w", ":Tabclose<cr>",  options },
+  { "<tab>",     ":Tabnext<cr>",   options },
+  { "<s-tab>",   ":Tabprev<cr>",   options },
+
+  -- copy to system clipboard
+  { "<leader>y", ":let @+=@0<cr>", options },
+
+  -- motion
+  {
+    "gd",
+    function()
+      vscode.action("editor.action.goToDeclaration")
+    end,
+    options
+  },
+  {
+    "gi",
+    function()
+      vscode.action("editor.action.goToImplementation")
+    end,
+    options
+  },
   {
     "gk",
     function()
@@ -34,9 +54,81 @@ _M.n = {
     options
   },
   {
+    "gh",
+    function()
+      vscode.action("editor.action.showHover")
+    end,
+    options
+  },
+  {
+    "g[",
+    function()
+      vscode.action("workbench.action.editor.nextChange")
+    end,
+    options
+  },
+  {
+    "g]",
+    function()
+      vscode.action("workbench.action.editor.previousChange")
+    end,
+    options
+  },
+
+  -- code action
+  {
+    "<leader>ca",
+    function()
+      vscode.action("editor.action.quickFix")
+    end,
+    options
+  },
+
+  -- rename
+  {
     "<leader>rn",
     function()
       vscode.action("editor.action.rename")
+    end,
+    options
+  },
+
+  -- searching
+  {
+    "<leader>fl",
+    function()
+      vscode.action("workbench.action.findInFiles")
+      vscode.action("vscode-neovim.escape")
+    end,
+    options
+  },
+  {
+    "<leader>fa",
+    function()
+      vscode.action("workbench.action.openRecent")
+    end,
+    options
+  },
+  {
+    "<leader>ff",
+    function()
+      vscode.action("workbench.action.quickOpen")
+    end,
+    options
+  },
+
+  -- explorer
+  {
+    "<leader>fe",
+    function()
+      vscode.action("workbench.view.explorer")
+    end,
+    options
+  },
+  {
+    "<leader>`",
+    function()
+      vscode.action("workbench.files.action.showActiveFileInExplorer")
     end,
     options
   },
@@ -47,8 +139,52 @@ _M.i = {}
 
 -- visual mode map
 _M.x = {
+  -- code indent
+  { "<", "<gv", options },
+  { ">", ">gv", options },
+
   -- formatting
-  { "=", "gq", options }
+  {
+    "=",
+    function()
+      vscode.call("editor.action.formatSelection")
+      vscode.call("vscode-neovim.escape")
+    end,
+    options
+  },
+
+  -- rename
+  {
+    "<leader>rn",
+    function()
+      vscode.action("editor.action.rename")
+    end,
+    options
+  },
+
+  -- searching
+  {
+    "<leader>fl",
+    function()
+      vscode.action("workbench.action.findInFiles", { args = { query = vim.fn.expand("<cword>") } })
+      vscode.action("vscode-neovim.escape")
+    end,
+    options
+  },
+  {
+    "<leader>fa",
+    function()
+      vscode.action("workbench.action.openRecent", { args = { query = vim.fn.expand("<cword>") } })
+    end,
+    options
+  },
+  {
+    "<leader>ff",
+    function()
+      vscode.action("workbench.action.quickOpen", { args = { query = vim.fn.expand("<cword>") } })
+    end,
+    options
+  },
 }
 
 return _M
