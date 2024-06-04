@@ -98,7 +98,6 @@ _M.n = {
     "<leader>fl",
     function()
       vscode.action("workbench.action.findInFiles")
-      vscode.action("vscode-neovim.escape")
     end,
     options
   },
@@ -167,7 +166,6 @@ _M.x = {
     "<leader>fl",
     function()
       vscode.action("workbench.action.findInFiles", { args = { query = vim.fn.expand("<cword>") } })
-      vscode.action("vscode-neovim.escape")
     end,
     options
   },
