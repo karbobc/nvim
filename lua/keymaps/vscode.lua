@@ -136,42 +136,42 @@ _M.n = {
   {
     "<leader>d",
     function()
-      vscode.action("workbench.action.debug.restart")
+      vscode.call("workbench.action.debug.restart")
     end,
     options
   },
   {
     "<leader>b",
     function()
-      vscode.action("editor.debug.action.toggleBreakpoint")
+      vscode.call("editor.debug.action.toggleBreakpoint")
     end,
     options
   },
   {
     "<leader>q",
     function()
-      vscode.action("workbench.action.debug.stepOver")
+      vscode.call("workbench.action.debug.stepOver")
     end,
     options
   },
   {
     "<leader>e",
     function()
-      vscode.action("debug.jumpToCursor")
+      vscode.call("debug.jumpToCursor")
     end,
     options
   },
   {
     "<leader>a",
     function()
-      vscode.action("workbench.action.debug.continue")
+      vscode.call("workbench.action.debug.continue")
     end,
     options
   },
   {
     "<leader>s",
     function()
-      vscode.action("workbench.action.debug.stepInto")
+      vscode.call("workbench.action.debug.stepInto")
     end,
     options
   },
