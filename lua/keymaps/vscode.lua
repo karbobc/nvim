@@ -105,14 +105,14 @@ _M.n = {
   {
     "<leader>fa",
     function()
-      vscode.action("workbench.action.openRecent")
+      vscode.action("workbench.action.quickOpen")
     end,
     options
   },
   {
     "<leader>ff",
     function()
-      vscode.action("workbench.action.quickOpen")
+      vscode.action("workbench.action.openRecent")
     end,
     options
   },
@@ -174,14 +174,14 @@ _M.x = {
   {
     "<leader>fa",
     function()
-      vscode.action("workbench.action.openRecent", { args = { query = vim.fn.expand("<cword>") } })
+      vscode.action("workbench.action.quickOpen")
     end,
     options
   },
   {
     "<leader>ff",
     function()
-      vscode.action("workbench.action.quickOpen", { args = { query = vim.fn.expand("<cword>") } })
+      vscode.action("workbench.action.openRecent")
     end,
     options
   },
