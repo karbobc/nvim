@@ -56,14 +56,16 @@ return {
           bashls = {},
           -- c, cpp
           clangd = {},
+          -- cmake
+          neocmake = {},
           -- docker
           dockerls = {},
           -- docker compose
           docker_compose_language_service = {},
-          -- cmake
-          neocmake = {},
           -- golang
           gopls = {},
+          -- harper
+          ["harper-ls"] = {},
           -- json
           jsonls = {
             settings = {
@@ -161,7 +163,7 @@ return {
         }, servers[server] or {})
         require("lspconfig")[server].setup(server_opts)
       end
-      -- get all the servers that are available thourgh mason-lspconfig
+      -- get all the servers that are available through mason-lspconfig
       local have_mason, mlsp = pcall(require, "mason-lspconfig")
       local all_mslp_servers = {}
       if have_mason then
