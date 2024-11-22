@@ -65,7 +65,7 @@ return {
           -- golang
           gopls = {},
           -- harper
-          ["harper-ls"] = {},
+          harper_ls = {},
           -- json
           jsonls = {
             settings = {
