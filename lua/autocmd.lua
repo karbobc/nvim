@@ -7,7 +7,7 @@ _M.setup = function()
     pattern = "*",
     callback = function()
       vim.highlight.on_yank({
-        higroup = "IncSearch",
+        higroup = "Search",
         timeout = 300,
       })
     end,
