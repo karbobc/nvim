@@ -4,9 +4,12 @@ return {
   event = "VeryLazy",
   opts = {
     label = {
+      -- show the label after the match
+      after = false, ---@type boolean|number[]
+      -- show the label before the match
+      before = true, ---@type boolean|number[]
       -- position of the label extmark
-      ---@type "eol" | "overlay" | "right_align" | "inline"
-      style = "overlay",
+      style = "overlay", ---@type "eol" | "overlay" | "right_align" | "inline"
     },
     modes = {
       char = {
