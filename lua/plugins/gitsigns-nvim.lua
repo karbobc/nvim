@@ -3,6 +3,8 @@ return {
   lazy = true,
   event = "VeryLazy",
   keys = {
+    { "g[", "<cmd>Gitsigns next_hunk<cr>", desc = "Gitsigns Next Hunk" },
+    { "g]", "<cmd>Gitsigns prev_hunk<cr>", desc = "Gitsigns Prev Hunk" },
     { "<leader>gst", "<cmd>Gitsigns toggle_signs<cr>", desc = "Gitsigns Toggle Signs" },
     { "<leader>gsn", "<cmd>Gitsigns toggle_numhl<cr>", desc = "Gitsigns Toggle Number Hightlight" },
     { "<leader>gsl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Gitsigns Toggle Line Hightlight" },

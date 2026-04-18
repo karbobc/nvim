@@ -16,7 +16,11 @@ _M.n = {
       vim.notify("Copied to the system clipboard.")
     end,
     options
-  }
+  },
+  -- forward
+  { "gj", "<C-i>", options },
+  -- backward
+  { "gk", "<C-o>", options },
 }
 
 -- insert mode map
@@ -25,7 +29,10 @@ _M.i = {}
 -- visual mode map
 _M.x = {
   -- formatting
-  { "=", "gq", options }
+  { "=", "gq", options },
+  -- code indent
+  { "<", "<gv", options },
+  { ">", ">gv", options },
 }
 
 return _M

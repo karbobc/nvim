@@ -9,10 +9,10 @@ return {
         opts = {},
       },
       {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
       },
       {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
       },
       {
         "hrsh7th/cmp-nvim-lsp",
@@ -25,8 +25,8 @@ return {
       },
     },
     keys = {
-      { "gd", vim.lsp.buf.definition, desc = "Goto Definition" },
-      { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
+      { "gd", vim.lsp.buf.declaration, desc = "Goto Declaration" },
+      { "gi", vim.lsp.buf.implementation, desc = "Goto Implementation" },
       { "gr", vim.lsp.buf.references, desc = "Goto References" },
       { "<leader>v", vim.lsp.buf.hover, desc = "Hover" },
       { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
@@ -192,7 +192,7 @@ return {
     end,
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     lazy = true,
     build = ":MasonUpdate",
     keys = {
