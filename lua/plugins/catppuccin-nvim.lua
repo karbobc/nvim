@@ -3,6 +3,7 @@ return {
   name = "catppuccin",
   lazy = true,
   event = "VimEnter",
+  priority = 1000,
   opts = {
     flavour = "mocha",
     default_integrations = false,
@@ -15,6 +16,16 @@ return {
         enabled = true,
         scope_color = "",
         colored_indent_levels = false,
+      },
+      lualine = {
+        all = function(colors)
+          return {
+            normal = {
+              a = { bg = colors.lavender, gui = "italic" },
+              b = { fg = colors.lavender },
+            }
+          }
+        end,
       },
       mason = true,
       noice = true,
@@ -50,7 +61,6 @@ return {
   config = function(_, opts)
     local plugin = require("catppuccin")
     plugin.setup(opts)
-    vim.cmd.colorscheme("catppuccin")
+    vim.cmd.colorscheme("catppuccin-nvim")
   end,
-  priority = 1000,
 }

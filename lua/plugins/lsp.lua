@@ -27,7 +27,7 @@ return {
     keys = {
       { "gd", vim.lsp.buf.definition, desc = "Goto Definition" },
       { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
-      { "gr",vim.lsp.buf.references, desc = "Goto References" },
+      { "gr", vim.lsp.buf.references, desc = "Goto References" },
       { "<leader>v", vim.lsp.buf.hover, desc = "Hover" },
       { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
       { "<leader>ca", vim.lsp.buf.code_action, mode = { "n", "v" }, desc = "Code Action" },
@@ -156,18 +156,21 @@ return {
         has_cmp and cmp_nvim_lsp.default_capabilities() or {},
         opts.capabilities or {}
       )
+
+      -- get all the servers that are available through mason-lspconfig
+      local have_mason, mlsp = pcall(require, "mason-lspconfig")
+      local all_mslp_servers = {}
+      if have_mason then
+        all_mslp_servers = mlsp.get_available_servers()
+      end
+
       -- setup by lspconfig
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {
           capabilities = vim.deepcopy(capabilities),
         }, servers[server] or {})
-        require("lspconfig")[server].setup(server_opts)
-      end
-      -- get all the servers that are available through mason-lspconfig
-      local have_mason, mlsp = pcall(require, "mason-lspconfig")
-      local all_mslp_servers = {}
-      if have_mason then
-        all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
+        vim.lsp.config(server, vim.tbl_deep_extend("force", vim.lsp.config[server] or {}, server_opts))
+        vim.lsp.enable(server)
       end
 
       local ensure_installed = {} ---@type string[]
